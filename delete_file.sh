@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
-for i in {0..9}
+files=$(ls -UF | grep -v /)
+for i in ${files}
 do
-	rm -rf "sample_${i}"
+	rm -rf ${i}
 done
