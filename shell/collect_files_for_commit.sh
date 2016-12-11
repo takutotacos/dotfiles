@@ -2,6 +2,6 @@
 
 cd $1
 
-mv /usr/local/bin/auto_naming.sh .
-mv /usr/local/bin/file_naming.sh .
-mv ~/.vimrc .
+cp /usr/local/bin/auto_naming.sh .
+cp /usr/local/bin/file_naming.sh .
+cp ~/.vimrc .
