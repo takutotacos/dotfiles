@@ -1,8 +1,7 @@
-from PIL import Image
 import os
 import xlsxwriter
 
-workbook = xlsxwriter.Workbook('demo.xlsx')
+workbook = xlsxwriter.Workbook('demo0001.xlsx')
 worksheet = workbook.add_worksheet('001')
 
 current_dir = os.getcwd()
@@ -20,9 +19,10 @@ for file in files:
         else:
             current_pic_prefix = first
             xth_picture = 1
-            worksheet = workbook.add_worksheet(first)
+            if (int(current_pic_prefix) % 10 == 1):
+                workbook = xlsxwriter.Workbook('demo' + current_pic_prefix + '.xlsx')
+            worksheet = workbook.add_worksheet(current_pic_prefix)
             worksheet.write(1 + height * (xth_picture - 1) - 1, 1, file)
             worksheet.insert_image(1 + height * (xth_picture - 1), 1, file)
 workbook.close()
-
 
