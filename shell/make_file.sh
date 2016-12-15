@@ -2,5 +2,5 @@
 
 for i in {0..9}
 do
-	touch "sample_${i}"
+	touch "sample_00${i}"
 done
