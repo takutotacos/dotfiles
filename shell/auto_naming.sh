@@ -21,11 +21,9 @@ naming_file() {
  	get_current_file_name
 	if [[ $file_name =~ ^[0-9]{4}-[0-9]{3}$ ]]; then
 		# File deleted
-		echo "the latest file name matches the file name pattern "
 	else
 		if [[ $file_name =~ ^[0-9]{1,4}$ ]]; then
 			# File renamed
-			echo "The file name matches the proper user input"
 			FILE_NAME=`printf %04d $file_name`
 			FILE_NAME="${FILE_NAME}-001"
  		else 
